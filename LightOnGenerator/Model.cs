@@ -123,7 +123,7 @@ namespace LightOnGenerator
             }
         }
 
-        public void saveToMongo(List<List<int>> ls,string note)
+        public void saveToMongo(List<List<int>> ls,string note,string sol)
         {
             var client = new MongoClient("mongodb://127.0.0.1:27017");
             var db = client.GetDatabase("Light");
@@ -152,6 +152,7 @@ namespace LightOnGenerator
                 string nou = "n" + i;
                 doc.Add(nou, s[i]);
             }
+            doc.Add("best solution", sol);
             doc.Add("note", note);
             lvl.InsertOne(doc);
         }

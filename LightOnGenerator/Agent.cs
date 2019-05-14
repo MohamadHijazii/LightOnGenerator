@@ -42,7 +42,7 @@ namespace LightOnGenerator
 
         public void save(string path,string note) {
             Model model = new Model(path);
-            model.saveToMongo(cases,note);
+            model.saveToMongo(cases,note,solution);
         }
 
         private void switcch_state(int pos)
@@ -72,6 +72,7 @@ namespace LightOnGenerator
             {
                 ini();
                 int a = solve();
+                //tries = a;
                 if (a < steps && a > 0)
                 {
                     steps = a;

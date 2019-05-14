@@ -39,7 +39,7 @@ namespace LightOnGenerator
                     var tem = Console.ReadLine();
                     n = int.Parse(tem);
                 } while (n < low || n > height);
-
+                repeat = true;
                 while (repeat)
                 {
                     Console.Clear();
@@ -55,9 +55,9 @@ namespace LightOnGenerator
                     repeat = (tem[0] == 'y');
                 }
 
-                Agent agent = new Agent("test", 100000);
+                Agent agent = new Agent("test", 1000);
                 Console.WriteLine("This is the solution of the case above: ");
-                agent.solve(100000);
+                agent.solve(1000);
                 agent.printSolution();
 
                 Console.WriteLine("Would you like to add this level?(y or n): ");
